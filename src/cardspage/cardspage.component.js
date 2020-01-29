@@ -37,7 +37,9 @@ const CardsPage = () =>{
     }  
     return (
       <div className={classes.root}>
+
         <SearchForm getData={getData}/>
+        
         <Grid className={classes.grid} container spacing={3} justify="center">
           {data ? (
             data.cards.map((card, i) => (

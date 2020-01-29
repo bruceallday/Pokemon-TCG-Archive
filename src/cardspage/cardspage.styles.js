@@ -8,8 +8,8 @@ export const useStyles = makeStyles(theme => ({
            backgroundRepeat: "no-repeat",
            backgroundSize: "100%",
            fontColor: "white",
-           height: "100vh",
            display: "flex",
+           minHeight: "100vh",
            flexDirection: "column",
            justifyContent: "space-between",
            alignItems: "center"
@@ -26,7 +26,6 @@ export const useStyles = makeStyles(theme => ({
 
          grid: {
            height: "100%",
-           marginTop: 20,
          }, 
 
-       }));
+}));

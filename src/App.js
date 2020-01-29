@@ -1,16 +1,24 @@
 import React from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 import Header from './header/header.component'
 import HomePage from './homepage/home.component'
-import  CardsPage from './cardspage/cardspage.component'
+import CardsPage from './cardspage/cardspage.component'
 
-
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom"
+import useStyles from './app.styles.js'
 
 const App = () => {
 
+  const classes = useStyles()
+
   return(
-  <div>
+  <div className={classes.root}>
     <Router>
       <Header />
       <Switch>
