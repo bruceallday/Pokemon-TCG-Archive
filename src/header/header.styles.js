@@ -8,7 +8,7 @@ export const useStyles = makeStyles(theme => ({
         justifyContent: "space-between",
         backgroundColor: "#FD2A36",
         borderRadius: 10,
-        fontFamily: "Barlow"
+        fontFamily: "Barlow",
     },
 
     title: {

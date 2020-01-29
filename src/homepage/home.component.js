@@ -1,14 +1,12 @@
 import React from 'react'
+import { useStyles } from './home.styles.js'
 
 const HomePage = () => {
-
+    const classes = useStyles()
     return(
+        <div className={classes.root} >
 
-        <div>
-            <h1>HOME PAGE, LOTS OF POKEMON HERE</h1>
-            
         </div>
-
     )
 }
 

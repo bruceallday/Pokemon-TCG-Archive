@@ -15,7 +15,7 @@ const CardsPage = () =>{
           setLoading(true)
 
           const result = await fetch(
-            `https://api.pokemontcg.io/v1/cards?name=blastoise`
+            `https://api.pokemontcg.io/v1/cards?name=charizard`
           )
 
           const data = await result.json()
@@ -39,7 +39,6 @@ const CardsPage = () =>{
         ) : (
           <p></p>
         )}
-        )))}
       </div>
     );
 }
