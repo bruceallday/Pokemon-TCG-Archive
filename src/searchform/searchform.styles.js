@@ -1,21 +1,26 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles(theme => ({
-         root: {},
+         root: {
+           zIndex: 99999
+         },
 
          searchButton: {
+           zIndex: 99999,
            height: 65,
            borderRadius: 10
          },
 
          searchForm: {
-           margin: 20
+           margin: 20,
+           zIndex: 99999
          },
 
          textField: {
            marginRight: 20,
            width: 500,
            borderRadius: 10,
+           zIndex: 99999,
 
            " & div": {
              fontFamily: "Barlow",
@@ -31,7 +36,6 @@ export const useStyles = makeStyles(theme => ({
            "& fieldset": {
              fontFamily: "Barlow",
              color: "white"
-           },
-
+           }
          }
        }));
