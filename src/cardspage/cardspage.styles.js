@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core/styles'
 export const useStyles = makeStyles(theme => ({
          root: {
            backgroundImage:
-             "url(' https://m.media-amazon.com/images/S/aplus-media/sc/4dd0e320-4919-4e98-89a0-1430f1b25978.__CR15,0,970,600_PT0_SX970_V1___.png')",
+             "url(' https://i.pinimg.com/originals/db/ae/df/dbaedf15b9f61d0fc040ad15bc7483e2.jpg')",
            backgroundAttachment: "fixed",
            backgroundRepeat: "no-repeat",
-           backgroundSize: "100%",
+           backgroundSize: "100%"
          }
        }));
