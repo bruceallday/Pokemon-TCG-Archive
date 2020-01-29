@@ -24,11 +24,13 @@ export const useStyles = makeStyles(theme => ({
          textField: {
            backgroundColor: "#FD2A36",
            width: 500,
+           borderRadius: 10,
 
            " & div": {
              fontFamily: "Barlow",
              color: "white",
-             fontSize: "2em"
+             fontSize: "2em",
+             borderRadius: 10,
            },
 
            "& label": {
