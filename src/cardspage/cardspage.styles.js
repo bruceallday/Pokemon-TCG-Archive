@@ -8,29 +8,16 @@ export const useStyles = makeStyles(theme => ({
            backgroundRepeat: "no-repeat",
            backgroundSize: "100%",
            fontColor: "white",
-           height: "100%",
+           height: "100vh",
            display: "flex",
            flexDirection: "column",
            justifyContent: "space-between",
            alignItems: "center"
          },
 
-         searchButton: {
-           backgroundColor: "#FD2A36",
-           height: 65,
-           borderRadius: 20,
-           color: "white",
-           marginLeft: 20,
-           "&:hover": {
-             backgroundColor: "#C7040E"
-           }
-         },
-
-         searchForm: {
-           margin: 20
-         },
-
          card: {
+           width: 240,
+           height: 330,
            "&:hover": {
              transform: "scale(1.1)",
              transition: "all .2s ease-in-out"
@@ -38,28 +25,8 @@ export const useStyles = makeStyles(theme => ({
          },
 
          grid: {
-           
-         },
+           height: "100%",
+           marginTop: 20,
+         }, 
 
-         textField: {
-           backgroundColor: "#FD2A36",
-           width: 500,
-           borderRadius: 20,
-
-           " & div": {
-             fontFamily: "Barlow",
-             color: "white",
-             fontSize: "1.6em",
-             borderRadius: 20
-           },
-           "& label": {
-             fontFamily: "Barlow",
-             color: "white",
-             fontSize: "1.1em"
-           },
-           "& fieldset": {
-             fontFamily: "Barlow",
-             color: "white"
-           }
-         }
        }));

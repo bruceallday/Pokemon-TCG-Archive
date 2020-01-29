@@ -18,7 +18,7 @@ const Header = () => {
           </Link>
           {"  "}
           <Link className={classes.links} to="/cards">
-            Cards
+            Search Cards
           </Link>
           {/*<Link to="/about/bruce">Hey bruce</Link>*/}
         </Toolbar>

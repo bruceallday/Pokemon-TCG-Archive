@@ -17,7 +17,7 @@ export const useStyles = makeStyles(theme => ({
 
     links: {
         color: "white",
-        fontSize: "2em",
+        fontSize: "1.5em",
         width: "10%",
         padding: 10,
         textDecoration: "none",
