@@ -24,6 +24,22 @@ export const useStyles = makeStyles(theme => ({
          textField: {
            backgroundColor: "#FD2A36",
            width: 500,
-           fontFamily: "Barlow",
+
+           " & div": {
+             fontFamily: "Barlow",
+             color: "white",
+             fontSize: "2em"
+           },
+
+           "& label": {
+             fontFamily: "Barlow",
+             color: "white",
+             fontSize: "1.1em"
+           },
+
+           "& fieldset": {
+             fontFamily: "Barlow",
+             color: "white",
+           },
          }
        }));
