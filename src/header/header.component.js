@@ -5,6 +5,7 @@ import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 
 import { useStyles } from "./header.styles.js"
+import img from '../../public/pokemon-logo.png'
 
 const Header = () => {
     const classes = useStyles()
@@ -14,7 +15,7 @@ const Header = () => {
 
         <Toolbar className={classes.root}>
           <Link className={classes.links} to="/">
-            <img className={classes.logo} src={"https://venturebeat.com/wp-content/uploads/2016/03/Pok%C3%A9mon_Trading_Card_Game_logo.png?fit=2000%2C1026&strip=all"}/>
+            <img className={classes.logo} src={img}/>
           </Link>
           {"  "}
           <Link className={classes.links} to="/cards">

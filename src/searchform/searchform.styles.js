@@ -8,8 +8,6 @@ export const useStyles = makeStyles(theme => ({
     searchButton: {
         height: 65,
         borderRadius: 10,
-        color: "white",
-        "&:hover": {}
     },
 
     searchForm: {

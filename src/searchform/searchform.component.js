@@ -8,7 +8,6 @@ import { useStyles } from "./searchform.styles.js";
 const SearchForm = (props) => {
 
     const [pokemon, handlePokemon] = useState("");
-
     const { getData } = props
 
     const classes = useStyles()
@@ -24,15 +23,15 @@ const SearchForm = (props) => {
           <TextField
             id="filled-basic"
             label="Search Pokemon by name"
-            variant="filled"
+            variant="outlined"
             className={classes.textField}
             onChange={handleChange}
+            color="primary"
           />
           <Button
             onClick={() => getData(pokemon)}
             className={classes.searchButton}
             variant="contained"
-            color="secondary"
           >
             Search
           </Button>
