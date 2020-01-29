@@ -3,15 +3,16 @@ import React, { useState, useEffect } from "react"
 import { useStyles } from './cardspage.styles.js'
 
 import Grid from '@material-ui/core/Grid'
+import TextField from '@material-ui/core/TextField'
 
 const CardsPage = () =>{
         const classes = useStyles()
-        const [data, setData] = useState()
+        const [data, setData] = useState(null)
         const [isLoading, setLoading] = useState(false)
 
-        useEffect(() => {
-          getData()
-        }, [])
+        // useEffect(() => {
+        //   getData()
+        // }, [])
 
         const getData = async () => {
           setData(null)
@@ -37,10 +38,18 @@ const CardsPage = () =>{
       <div className={classes.root}>
         <Grid className={classes.grid} container spacing={3} justify="center">
           {data ? (
-            data.cards.map((card, i) =>
-            <Grid item ><img className={classes.card} key={i} src={card.imageUrl} /></Grid>)
+            data.cards.map((card, i) => (
+              <Grid item>
+                <img className={classes.card} key={i} src={card.imageUrl} />
+              </Grid>
+            ))
           ) : (
-            <p></p>
+            <TextField
+              id="outlined-basic"
+              label="Search Pokemon by name"
+              variant="outlined"
+              className={classes.textField}
+            />
           )}
         </Grid>
       </div>

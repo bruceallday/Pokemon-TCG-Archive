@@ -7,12 +7,23 @@ export const useStyles = makeStyles(theme => ({
            backgroundAttachment: "fixed",
            backgroundRepeat: "no-repeat",
            backgroundSize: "100%",
+           fontColor: "white",
+           height: "100%",
+           display: "flex",
+           justifyContent: "center",
+           alignItems: "center"
          },
 
          card: {
            "&:hover": {
              transform: "scale(1.1)",
-             transition: 'all .2s ease-in-out',
+             transition: "all .2s ease-in-out"
            }
          },
+
+         textField: {
+           backgroundColor: "#FD2A36",
+           width: 500,
+           fontFamily: "Barlow",
+         }
        }));
