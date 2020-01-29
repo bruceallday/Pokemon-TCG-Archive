@@ -10,8 +10,24 @@ export const useStyles = makeStyles(theme => ({
            fontColor: "white",
            height: "100%",
            display: "flex",
-           justifyContent: "center",
+           flexDirection: "column",
+           justifyContent: "space-between",
            alignItems: "center"
+         },
+
+         searchButton: {
+           backgroundColor: "#FD2A36",
+           height: 65,
+           borderRadius: 20,
+           color: "white",
+           marginLeft: 20,
+           "&:hover": {
+             backgroundColor: "#C7040E"
+           }
+         },
+
+         searchForm: {
+           margin: 20
          },
 
          card: {
@@ -21,15 +37,8 @@ export const useStyles = makeStyles(theme => ({
            }
          },
 
-         searchButton: {
-           backgroundColor: "#FD2A36",
-           height: 75,
-           borderRadius: 20,
-           color: "white",
-            marginLeft: 20,
-           "&:hover": {
-             backgroundColor: "red",
-           }
+         grid: {
+           
          },
 
          textField: {
@@ -40,7 +49,7 @@ export const useStyles = makeStyles(theme => ({
            " & div": {
              fontFamily: "Barlow",
              color: "white",
-             fontSize: "2em",
+             fontSize: "1.6em",
              borderRadius: 20
            },
            "& label": {

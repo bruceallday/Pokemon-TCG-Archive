@@ -43,7 +43,7 @@ const CardsPage = () =>{
     }  
     return (
       <div className={classes.root}>
-        <div>
+        <div className={classes.searchForm}>
           <TextField
             id="outlined-basic"
             label="Search Pokemon by name"
@@ -62,7 +62,7 @@ const CardsPage = () =>{
         <Grid className={classes.grid} container spacing={3} justify="center">
           {data ? (
             data.cards.map((card, i) => (
-              <Grid item>
+              <Grid key={i} item>
                 <img className={classes.card} key={i} src={card.imageUrl} />
               </Grid>
             ))
