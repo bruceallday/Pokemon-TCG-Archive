@@ -4,6 +4,7 @@ import { useStyles } from './cardspage.styles.js'
 
 import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
 
 const CardsPage = () =>{
     const classes = useStyles()
@@ -42,6 +43,22 @@ const CardsPage = () =>{
     }  
     return (
       <div className={classes.root}>
+        <div>
+          <TextField
+            id="outlined-basic"
+            label="Search Pokemon by name"
+            variant="outlined"
+            className={classes.textField}
+            onChange={handleChange}
+          />
+          <Button
+            onClick={() => getData(pokemon)}
+            className={classes.searchButton}
+            variant="contained"
+          >
+            Search
+          </Button>
+        </div>
         <Grid className={classes.grid} container spacing={3} justify="center">
           {data ? (
             data.cards.map((card, i) => (
@@ -50,13 +67,7 @@ const CardsPage = () =>{
               </Grid>
             ))
           ) : (
-            <TextField
-              id="outlined-basic"
-              label="Search Pokemon by name"
-              variant="outlined"
-              className={classes.textField}
-              onChange={handleChange}
-            />
+            <p></p>
           )}
         </Grid>
       </div>

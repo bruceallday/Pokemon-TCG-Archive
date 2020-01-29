@@ -30,4 +30,4 @@ export const useStyles = makeStyles(theme => ({
     appBar: {
         borderRadius: 20,
     }
-}));
+}))

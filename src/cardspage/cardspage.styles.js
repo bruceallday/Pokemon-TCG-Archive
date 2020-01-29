@@ -21,27 +21,36 @@ export const useStyles = makeStyles(theme => ({
            }
          },
 
+         searchButton: {
+           backgroundColor: "#FD2A36",
+           height: 75,
+           borderRadius: 20,
+           color: "white",
+            marginLeft: 20,
+           "&:hover": {
+             backgroundColor: "red",
+           }
+         },
+
          textField: {
            backgroundColor: "#FD2A36",
            width: 500,
-           borderRadius: 10,
+           borderRadius: 20,
 
            " & div": {
              fontFamily: "Barlow",
              color: "white",
              fontSize: "2em",
-             borderRadius: 10,
+             borderRadius: 20
            },
-
            "& label": {
              fontFamily: "Barlow",
              color: "white",
              fontSize: "1.1em"
            },
-
            "& fieldset": {
              fontFamily: "Barlow",
-             color: "white",
-           },
+             color: "white"
+           }
          }
        }));
