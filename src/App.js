@@ -4,9 +4,7 @@ import React from 'react'
 import HomePage from './homepage/home.component'
 import  CardsPage from './cardspage/cardspage.component'
 
-
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom"
-
 
 const App = () => (
   <Router>
