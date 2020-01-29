@@ -1,6 +1,7 @@
 import React from 'react'
 // import AboutPage from './about.js'
 
+import Header from './header/header.component'
 import HomePage from './homepage/home.component'
 import  CardsPage from './cardspage/cardspage.component'
 
@@ -9,13 +10,7 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-ro
 const App = () => (
   <Router>
 
-    <div>
-      <Link to="/">Home</Link>
-      {"  "}
-      <Link to="/cards">Cards</Link>
-      {/*<Link to="/about/bruce">Hey bruce</Link>*/}
-    </div>
-
+    <Header/>
     <Switch>
 
       <Route path="/" exact>
