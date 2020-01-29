@@ -10,7 +10,8 @@ const Header = () => {
     const classes = useStyles()
   return (
     <div>
-      <AppBar position="static">
+      <AppBar className={classes.appBar} position="static">
+
         <Toolbar className={classes.root}>
           <Link className={classes.links} to="/">
             <img className={classes.logo} src={"https://venturebeat.com/wp-content/uploads/2016/03/Pok%C3%A9mon_Trading_Card_Game_logo.png?fit=2000%2C1026&strip=all"}/>
@@ -21,6 +22,7 @@ const Header = () => {
           </Link>
           {/*<Link to="/about/bruce">Hey bruce</Link>*/}
         </Toolbar>
+        
       </AppBar>
     </div>
   );

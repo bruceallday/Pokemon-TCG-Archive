@@ -1,5 +1,4 @@
 import React from 'react'
-// import AboutPage from './about.js'
 
 import Header from './header/header.component'
 import HomePage from './homepage/home.component'
@@ -9,7 +8,6 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-ro
 
 const App = () => (
   <Router>
-
     <Header/>
     <Switch>
 
