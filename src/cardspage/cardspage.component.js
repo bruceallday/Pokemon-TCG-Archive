@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react"
-import './cardspage.styles.js'
+
+import { useStyles } from './cardspage.styles.js'
+
+import Grid from '@material-ui/core/Grid'
 
 const CardsPage = () =>{
+        const classes = useStyles()
         const [data, setData] = useState()
-
         const [isLoading, setLoading] = useState(false)
 
         useEffect(() => {
@@ -31,14 +34,15 @@ const CardsPage = () =>{
           }
         }  
     return (
-      <div>
-        {data ? (
-          data.cards.map((card, i) => (
-            <img key={i} src={card.imageUrl} />
-          ))
-        ) : (
-          <p></p>
-        )}
+      <div className={classes.root}>
+        <Grid container spacing={3} justify="center">
+          {data ? (
+            data.cards.map((card, i) =>
+            <Grid item ><img key={i} src={card.imageUrl} /></Grid>)
+          ) : (
+            <p></p>
+          )}
+        </Grid>
       </div>
     );
 }

@@ -10,11 +10,11 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-ro
 const App = () => {
 
   return(
-
   <div>
     <Router>
       <Header />
       <Switch>
+
         <Route path="/" exact>
           <HomePage />
         </Route>
@@ -34,6 +34,7 @@ const App = () => {
         <Route path="/">
           <div>PAGE NOT FOUND</div>
         </Route>
+        
       </Switch>
     </Router>
   </div>
