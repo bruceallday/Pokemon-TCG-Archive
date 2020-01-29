@@ -14,6 +14,6 @@ export const useStyles = makeStyles(theme => ({
          },
 
          logo: {
-           width: "70%"
+           width: "50%"
          }
 }));

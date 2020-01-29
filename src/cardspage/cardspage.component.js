@@ -35,10 +35,10 @@ const CardsPage = () =>{
         }  
     return (
       <div className={classes.root}>
-        <Grid container spacing={3} justify="center">
+        <Grid className={classes.grid} container spacing={3} justify="center">
           {data ? (
             data.cards.map((card, i) =>
-            <Grid item ><img key={i} src={card.imageUrl} /></Grid>)
+            <Grid item ><img className={classes.card} key={i} src={card.imageUrl} /></Grid>)
           ) : (
             <p></p>
           )}
