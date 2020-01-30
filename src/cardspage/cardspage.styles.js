@@ -7,7 +7,6 @@ const useStyles = makeStyles(() => ({
     backgroundAttachment: 'fixed',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '100%',
-    fontColor: 'white',
     display: 'flex',
     minHeight: '100vh',
     flexDirection: 'column',

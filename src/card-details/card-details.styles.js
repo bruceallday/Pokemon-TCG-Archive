@@ -8,7 +8,7 @@ const useStyles = makeStyles(() => ({
 
   cardImage: {
     width: 450,
-    height: 740,
+    height: 740
   },
 
   detailsContainer: {
@@ -20,8 +20,9 @@ const useStyles = makeStyles(() => ({
 
   cardDetails: {
     width: '40vw',
-    backgroundColor: 'red',
     padding: 20,
+    fontFamily: 'Barlow',
+    fontWeight: 15,
   },
 
   detailsPage: {
@@ -30,7 +31,7 @@ const useStyles = makeStyles(() => ({
     objectFit: 'cover',
     height: '100vh',
     width: '100%',
-  },
-}))
+  }
+}));
 
 export default useStyles

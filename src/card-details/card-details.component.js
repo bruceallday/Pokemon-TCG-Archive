@@ -53,15 +53,11 @@ const CardDetails = () => {
             <p>{`Super type: ${data.cards[0].supertype}`}</p>
 
             {data.cards[0].weaknesses.map((item, i) => (
-              <p
-                key={item}
-              >{`Weakness ${i}: ${item.type} Value: ${item.value}`}</p>
+              <p key={item}>{`Weakness ${i + 1}: ${item.type} Value: ${item.value}`}</p>
             ))}
 
             {data.cards[0].attacks.map((item, i) => (
-              <p key={item}>{`Attack ${i + 1}: ${item.name} -> Damage:${
-                item.damage
-              } -> ${item.text}`}</p>
+              <p key={item}>{`Attack ${i + 1}: ${item.name} -> Damage:${item.damage} -> ${item.text}`}</p>
             ))}
 
             <p>{`Series: ${data.cards[0].series}`}</p>
@@ -70,9 +66,6 @@ const CardDetails = () => {
             <p>{`Set: ${data.cards[0].set}`}</p>
             <p>{`Set Code: ${data.cards[0].setCode}`}</p>
 
-            {data.cards[0].retreatCost.map(item => (
-              <p key={item}>{`Retreat cost: ${item}`}</p>
-            ))}
             <p>{`Converted retreat cost: ${data.cards[0].convertedRetreatCost}`}</p>
 
             <p>{`Number: ${data.cards[0].number}`}</p>
