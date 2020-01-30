@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react"
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Route, useRouteMatch } from "react-router-dom"
 
-
-import SearchForm from "../searchform/searchform.component";
+import SearchForm from "../searchform/searchform.component"
+import CardDetails from "../card-details//card-details.component"
 
 import { useStyles } from './cardspage.styles.js'
 
@@ -11,9 +11,9 @@ import Grid from '@material-ui/core/Grid'
 const CardsPage = () =>{
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(false)
-    const classes = useStyles();
-    const { pokemonName } = useParams();
-    console.log(pokemonName)
+    const classes = useStyles()
+    // const { pokemonName } = useParams();
+    // console.log(pokemonName)
 
     // useEffect(() => {
     //   getData()
@@ -46,16 +46,17 @@ const CardsPage = () =>{
         <Grid className={classes.grid} container spacing={3} justify="center">
           {data ? (
             data.cards.map((card, i) => (
-              <Link key={i} to={`/cards/${card.name}/${card.id}`}>
-                <Grid key={i} item>
+              <Grid key={i} item>
+                <Link key={i} to={`/cards/${card.name}/${card.id}`}>
                   <img className={classes.card} key={i} src={card.imageUrl} />
-                </Grid>
-              </Link>
+                </Link>
+              </Grid>
             ))
           ) : (
             <p></p>
           )}
         </Grid>
+
       </div>
     );
 }

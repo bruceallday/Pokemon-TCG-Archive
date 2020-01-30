@@ -7,6 +7,7 @@ import img from '../../public/pokemon-logo.png'
 const HomePage = () => {
     const classes = useStyles()
     return(
+        
         <div className={classes.root} >
             <img className={classes.logo} src={img} />
         </div>

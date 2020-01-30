@@ -10,7 +10,7 @@ import {
 import Header from './header/header.component'
 import HomePage from './homepage/home.component'
 import CardsPage from './cardspage/cardspage.component'
-import AboutCard from './card-details/card-details.component'
+import CardDetails from './card-details/card-details.component'
 
 import useStyles from './app.styles.js'
 
@@ -29,11 +29,9 @@ const App = () => {
 
           <Route path="/cards">
             <CardsPage />
-          </Route>
-
-          <Route path="cards/:pokemonName/hey" exact>
-            {/* SINGLE CARD */}
-            <AboutCard />
+            <Route path="/:name/:id" exact>
+              <CardDetails />
+            </Route>
           </Route>
 
           <Route path="/home">

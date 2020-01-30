@@ -1,15 +1,14 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import {useStyles} from "@material-ui/core/styles/";
+import { useParams,  } from "react-router-dom";
 
-const AboutCard = () => {
-  const classes = useStyles();
-  const { studentname } = useParams();
-
+const CardDetails = () => {
+  console.log("IN CARD DETAILS")
+  const { name, id } = useParams();
+  console.log(name, id)
+  
   return (
-      <div style={{color: 'white'}} >{studentname}</div>
+      <div>DETAILS PAGE {name, id}</div>
   )
-
 };
 
-export default AboutCard;
+export default CardDetails; 
