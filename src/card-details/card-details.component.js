@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import useStyles from './card-details.styles'
 
-
 const CardDetails = () => {
   const { name, cardID } = useParams()
 
@@ -32,10 +31,27 @@ const CardDetails = () => {
 
   return (
     <div>
-      {data ? <img className={classes.cardImage} src={data.cards[0].imageUrlHiRes} alt="hi resolution" /> : <p />}
+      {data ? (
+        <div className={classes.detailsContainer}>
+          <img
+            className={classes.cardImage}
+            src={data.cards[0].imageUrlHiRes}
+            alt="hi resolution"
+          />
+          <div className={classes.cardDetails}>
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+          </div>
+        </div>
+      ) : (
+        <p />
+      )}
+
       {data ? console.log(data.cards) : <p />}
     </div>
-  )
+  );
 }
 
 export default CardDetails
