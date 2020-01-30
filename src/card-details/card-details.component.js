@@ -39,9 +39,27 @@ const CardDetails = () => {
             alt="hi resolution"
           />
           <div className={classes.cardDetails}>
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
+            <h2>{`#${data.cards[0].nationalPokedexNumber} ${data.cards[0].name}`}</h2>
+
+            <p>{`Evolves from ${data.cards[0].evolvesFrom}`}</p>
+
+            <p>{`HP: ${data.cards[0].hp}`}</p>
+
+            {data.cards[0].types.map((item, i) => (
+              <p key={item}>{`TYPE ${i + 1}: ${item}`}</p>
+            ))}
+
+            <p>{`SUBTYPE ${data.cards[0].subtype}`}</p>
+            <p>{`SUPER TYPE ${data.cards[0].supertype}`}</p>
+
+            {data.cards[0].weaknesses.map(item => (
+              <p key={item}>{`WEAKNESS: ${item.type} VALUE: ${item.value}`}</p>
+            ))}
+
+            {data.cards[0].attacks.map(item => (
+              <p key={item}>{`${item.name} ${item.text}`}</p>
+            ))}
+
             <p>4</p>
           </div>
         </div>
