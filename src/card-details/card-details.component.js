@@ -8,7 +8,7 @@ const CardDetails = () => {
   console.log(name, cardID)
 
   return(
-    <div>{name, cardID}</div>
+    <div>{name + cardID}</div>
   )
 
 }

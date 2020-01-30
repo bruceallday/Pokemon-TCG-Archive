@@ -28,12 +28,12 @@ const App = () => {
             <HomePage />
           </Route>
 
-         <Route path="/cards">
-           <CardsPage />
+          <Route path="/cards/:name/:cardID" exact>
+            <CardDetails />
           </Route>
 
-          <Route path="/:name/:cardID" exact>
-            <CardDetails />
+          <Route path="/cards">
+            <CardsPage />
           </Route>
 
           <Route path="/home">
