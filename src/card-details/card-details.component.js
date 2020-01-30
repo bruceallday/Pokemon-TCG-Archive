@@ -52,14 +52,32 @@ const CardDetails = () => {
             <p>{`Subtype: ${data.cards[0].subtype}`}</p>
             <p>{`Super type: ${data.cards[0].supertype}`}</p>
 
-            {data.cards[0].weaknesses.map((item) => (
-              <p key={item}>{`Weakness: ${item.type} Value: ${item.value}`}</p>
+            {data.cards[0].weaknesses.map((item, i) => (
+              <p
+                key={item}
+              >{`Weakness ${i}: ${item.type} Value: ${item.value}`}</p>
             ))}
 
-            {data.cards[0].attacks.map((item) => (
-              <p key={item}>{`Attack: ${item.name} -> Discription: ${item.text}`}</p>
+            {data.cards[0].attacks.map((item, i) => (
+              <p key={item}>{`Attack ${i + 1}: ${item.name} -> Damage:${
+                item.damage
+              } -> ${item.text}`}</p>
             ))}
 
+            <p>{`Series: ${data.cards[0].series}`}</p>
+            <p>{`Card ID: ${data.cards[0].id}`}</p>
+
+            <p>{`Set: ${data.cards[0].set}`}</p>
+            <p>{`Set Code: ${data.cards[0].setCode}`}</p>
+
+            {data.cards[0].retreatCost.map(item => (
+              <p key={item}>{`Retreat cost: ${item}`}</p>
+            ))}
+            <p>{`Converted retreat cost: ${data.cards[0].convertedRetreatCost}`}</p>
+
+            <p>{`Number: ${data.cards[0].number}`}</p>
+            <p>{`Rarity: ${data.cards[0].rarity}`}</p>
+            <p>{`Artwork by ${data.cards[0].artist}`}</p>
           </div>
         </div>
       ) : (
