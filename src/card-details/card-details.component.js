@@ -46,18 +46,18 @@ const CardDetails = () => {
             <p>{`HP: ${data.cards[0].hp}`}</p>
 
             {data.cards[0].types.map((item, i) => (
-              <p key={item}>{`Type ${i + 1}: ${item}`}</p>
+              <p key={i}>{`Type ${i + 1}: ${item}`}</p>
             ))}
 
             <p>{`Subtype: ${data.cards[0].subtype}`}</p>
             <p>{`Super type: ${data.cards[0].supertype}`}</p>
 
             {data.cards[0].weaknesses.map((item, i) => (
-              <p key={item}>{`Weakness ${i + 1}: ${item.type} Value: ${item.value}`}</p>
+              <p key={i}>{`Weakness ${i + 1}: ${item.type} -> Value: ${item.value}`}</p>
             ))}
 
             {data.cards[0].attacks.map((item, i) => (
-              <p key={item}>{`Attack ${i + 1}: ${item.name} -> Damage:${item.damage} -> ${item.text}`}</p>
+              <p key={i}>{`Attack ${i + 1}: ${item.name} -> Damage: ${item.damage} -> ${item.text}`}</p>
             ))}
 
             <p>{`Series: ${data.cards[0].series}`}</p>
