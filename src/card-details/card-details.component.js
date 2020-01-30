@@ -30,7 +30,8 @@ const CardDetails = () => {
 
   return (
     <div>
-      { data ? console.log(data) : <p />}
+      {data ? <img src={data.cards[0].imageUrlHiRes} alt="hi resolution" /> : <p />}
+      {data ? console.log(data.cards) : <p />}
     </div>
   )
 }

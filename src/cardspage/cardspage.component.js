@@ -11,10 +11,6 @@ const CardsPage = () => {
   const [data, setData] = useState(null)
   const classes = useStyles()
 
-  // useEffect(() => {
-  //   getData()
-  // }, [])
-
   const getData = async (pokemon) => {
     setData(null)
 

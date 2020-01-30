@@ -13,7 +13,6 @@ const SearchForm = (props) => {
 
   const handleChange = (event) => {
     handlePokemon(event.target.value)
-    console.log(event.target.value)
   }
 
   return (
