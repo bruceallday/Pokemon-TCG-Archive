@@ -11,9 +11,10 @@ const useStyles = makeStyles(() => ({
   },
 
   detailsContainer: {
-    padding: '160 0 0 100',
+    padding: '160 0 0 50',
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-evenly',
   },
 
   cardDetails: {
