@@ -6,7 +6,6 @@ import SearchForm from '../searchform/searchform.component'
 
 import useStyles from './cardspage.styles'
 
-
 const CardsPage = () => {
   const [data, setData] = useState(null)
   const classes = useStyles()

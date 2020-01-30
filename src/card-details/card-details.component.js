@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import useStyles from './card-details.styles'
 
 
 const CardDetails = () => {
   const { name, cardID } = useParams()
-  console.log('IN CARD DETAILS')
+
   console.log(name, cardID)
 
   const [data, setData] = useState(null)
+  const classes = useStyles()
 
   const getData = async (card) => {
     setData(null)
@@ -30,7 +32,7 @@ const CardDetails = () => {
 
   return (
     <div>
-      {data ? <img src={data.cards[0].imageUrlHiRes} alt="hi resolution" /> : <p />}
+      {data ? <img className={classes.cardImage} src={data.cards[0].imageUrlHiRes} alt="hi resolution" /> : <p />}
       {data ? console.log(data.cards) : <p />}
     </div>
   )
