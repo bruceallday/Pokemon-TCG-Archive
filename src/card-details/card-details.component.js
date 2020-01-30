@@ -30,7 +30,7 @@ const CardDetails = () => {
   }, [])
 
   return (
-    <div>
+    <div className={classes.detailsPage}>
       {data ? (
         <div className={classes.detailsContainer}>
           <img
@@ -46,21 +46,20 @@ const CardDetails = () => {
             <p>{`HP: ${data.cards[0].hp}`}</p>
 
             {data.cards[0].types.map((item, i) => (
-              <p key={item}>{`TYPE ${i + 1}: ${item}`}</p>
+              <p key={item}>{`Type ${i + 1}: ${item}`}</p>
             ))}
 
-            <p>{`SUBTYPE ${data.cards[0].subtype}`}</p>
-            <p>{`SUPER TYPE ${data.cards[0].supertype}`}</p>
+            <p>{`Subtype: ${data.cards[0].subtype}`}</p>
+            <p>{`Super type: ${data.cards[0].supertype}`}</p>
 
-            {data.cards[0].weaknesses.map(item => (
-              <p key={item}>{`WEAKNESS: ${item.type} VALUE: ${item.value}`}</p>
+            {data.cards[0].weaknesses.map((item) => (
+              <p key={item}>{`Weakness: ${item.type} Value: ${item.value}`}</p>
             ))}
 
-            {data.cards[0].attacks.map(item => (
-              <p key={item}>{`${item.name} ${item.text}`}</p>
+            {data.cards[0].attacks.map((item) => (
+              <p key={item}>{`Attack: ${item.name} -> Discription: ${item.text}`}</p>
             ))}
 
-            <p>4</p>
           </div>
         </div>
       ) : (

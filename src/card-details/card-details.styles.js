@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles'
+import img from '../../public/pokemon-bg.jpg'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -21,6 +22,10 @@ const useStyles = makeStyles(() => ({
     width: '40vw',
     backgroundColor: 'red',
   },
+
+  detailsPage:{
+      backgroundImage: `url(${img})`,
+  }
 }))
 
 export default useStyles
