@@ -1,14 +1,16 @@
-import React from "react";
-import { useParams,  } from "react-router-dom";
+import React from "react"
+import { useParams } from "react-router-dom"
+
 
 const CardDetails = () => {
+  const { name, cardID } = useParams()
   console.log("IN CARD DETAILS")
-  const { name, id } = useParams();
-  console.log(name, id)
-  
-  return (
-      <div>DETAILS PAGE {name, id}</div>
-  )
-};
+  console.log(name, cardID)
 
-export default CardDetails; 
+  return(
+    <div>{name, cardID}</div>
+  )
+
+}
+
+export default CardDetails

@@ -12,15 +12,15 @@ const Header = () => {
   return (
     <div>
       <AppBar className={classes.appBar} position="static">
+
         <Toolbar className={classes.root}>
           <Link className={classes.links} to="/">
             <img className={classes.logo} src={img}/>
           </Link>
-          {"  "}
+
           <Link className={classes.links} to="/cards">
             Search Cards
           </Link>
-          {/*<Link to="/about/bruce">Hey bruce</Link>*/}
         </Toolbar>
         
       </AppBar>

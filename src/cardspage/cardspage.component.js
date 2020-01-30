@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { useParams, Link, Route, useRouteMatch } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import SearchForm from "../searchform/searchform.component"
-import CardDetails from "../card-details//card-details.component"
 
 import { useStyles } from './cardspage.styles.js'
 
@@ -12,8 +11,6 @@ const CardsPage = () =>{
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(false)
     const classes = useStyles()
-    // const { pokemonName } = useParams();
-    // console.log(pokemonName)
 
     // useEffect(() => {
     //   getData()
@@ -47,7 +44,7 @@ const CardsPage = () =>{
           {data ? (
             data.cards.map((card, i) => (
               <Grid key={i} item>
-                <Link key={i} to={`/cards/${card.name}/${card.id}`}>
+                <Link key={i} to={`/${card.name}/${card.id}/`}>
                   <img className={classes.card} key={i} src={card.imageUrl} />
                 </Link>
               </Grid>
