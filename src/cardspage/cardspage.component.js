@@ -1,62 +1,57 @@
-import React, { useState, useEffect } from "react"
-import { Link, useRouteMatch } from "react-router-dom"
-
-import SearchForm from "../searchform/searchform.component"
-
-import { useStyles } from './cardspage.styles.js'
-
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
 
-const CardsPage = () =>{
-    let match = useRouteMatch();
-    const [data, setData] = useState(null)
-    const [isLoading, setLoading] = useState(false)
-    const classes = useStyles()
-    
-    // useEffect(() => {
-    //   getData()
-    // }, [])
+import SearchForm from '../searchform/searchform.component'
 
-    const getData = async (pokemon) => {
-      setData(null)
-      setLoading(true)
+import useStyles from './cardspage.styles'
 
-      const result = await fetch(
-        `https://api.pokemontcg.io/v1/cards?name=${pokemon}`
-      )
 
-      const data = await result.json()
+const CardsPage = () => {
+  const [data, setData] = useState(null)
+  const classes = useStyles()
 
-      if (data.error) {
-        console.log(data.error)
-        setLoading(false)
+  // useEffect(() => {
+  //   getData()
+  // }, [])
 
-      } else {
-        setData(data)
-        setLoading(false)
-        console.log(data)
-      }
-    }  
-    return (
-      <div className={classes.root}>
-        <SearchForm getData={getData} />
+  const getData = async (pokemon) => {
+    setData(null)
 
-        <Grid className={classes.grid} container spacing={3} justify="center">
-          {data ? (
-            data.cards.map((card, i) => (
-              <Grid key={i} item>
-                <Link key={i} to={`/cards/${card.name}/${card.id}/`}>
-                  <img className={classes.card} key={i} src={card.imageUrl} />
-                </Link>
-              </Grid>
-            ))
-          ) : (
-            <p></p>
-          )}
-        </Grid>
+    const result = await fetch(
+      `https://api.pokemontcg.io/v1/cards?name=${pokemon}`,
+    )
 
-      </div>
-    );
+    const formattedData = await result.json()
+
+    if (formattedData.error) {
+      console.log(formattedData.error)
+    } else {
+      setData(formattedData)
+      console.log(data)
+    }
+  }
+
+  return (
+    <div className={classes.root}>
+      <SearchForm getData={getData} />
+
+      <Grid className={classes.grid} container spacing={3} justify="center">
+        {data ? (
+          data.cards.map((card) => (
+            <Grid key={card} item>
+              <Link key={card} to={`/cards/${card.name}/${card.id}/`}>
+                <img className={classes.card} key={card.id} src={card.imageUrl} alt={card.name} />
+              </Link>
+            </Grid>
+          ))
+        ) : (
+          <p />
+        )}
+      </Grid>
+
+    </div>
+  )
 }
 
 export default CardsPage

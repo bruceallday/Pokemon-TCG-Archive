@@ -1,11 +1,9 @@
-import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
 
-import {makeStyles} from '@material-ui/core/styles'
-
-export const useStyles = makeStyles(theme => ({
+export const useStyles = makeStyles(() => ({
   root: {
-    height: "100%"
-  }
-}));
+    height: '100%',
+  },
+}))
 
 export default useStyles

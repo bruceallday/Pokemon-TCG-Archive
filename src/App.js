@@ -3,21 +3,18 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
-} from "react-router-dom";
+} from 'react-router-dom'
 
 import Header from './header/header.component'
 import HomePage from './homepage/home.component'
 import CardsPage from './cardspage/cardspage.component'
 import CardDetails from './card-details/card-details.component'
 
-import useStyles from './app.styles.js'
+import { useStyles } from './app.styles'
 
 const App = () => {
-
   const classes = useStyles()
- 
   return (
     <div className={classes.root}>
       <Router>
@@ -46,7 +43,7 @@ const App = () => {
         </Switch>
       </Router>
     </div>
-  );
+  )
 }
 
 export default App
