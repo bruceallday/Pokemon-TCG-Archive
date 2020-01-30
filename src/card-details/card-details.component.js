@@ -6,7 +6,10 @@ const AboutCard = () => {
   const classes = useStyles();
   const { studentname } = useParams();
 
-  return <div>CARD INFO PAGE</div>;
+  return (
+      <div style={{color: 'white'}} >{studentname}</div>
+  )
+
 };
 
 export default AboutCard;

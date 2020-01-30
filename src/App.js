@@ -10,6 +10,7 @@ import {
 import Header from './header/header.component'
 import HomePage from './homepage/home.component'
 import CardsPage from './cardspage/cardspage.component'
+import AboutCard from './card-details/card-details.component'
 
 import useStyles from './app.styles.js'
 
@@ -17,36 +18,35 @@ const App = () => {
 
   const classes = useStyles()
 
-  return(
-  <div className={classes.root}>
-    <Router>
-      <Header />
-      <Switch>
+  return (
+    <div className={classes.root}>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/" exact>
+            <HomePage />
+          </Route>
 
-        <Route path="/" exact>
-          <HomePage />
-        </Route>
+          <Route path="/cards">
+            <CardsPage />
+          </Route>
 
-        <Route path="/cards">
-          <CardsPage />
-        </Route>
+          <Route path="cards/:pokemonName/hey" exact>
+            {/* SINGLE CARD */}
+            <AboutCard />
+          </Route>
 
-        <Route path="/:pokemonName" exact>
-          {/* SINGLE CARD */}
-        </Route>
+          <Route path="/home">
+            <Redirect to="/" />
+          </Route>
 
-        <Route path="/home">
-          <Redirect to="/" />
-        </Route>
-
-        <Route path="/">
-          <div>PAGE NOT FOUND</div>
-        </Route>
-        
-      </Switch>
-    </Router>
-  </div>
-  )
+          <Route path="/">
+            <div>PAGE NOT FOUND</div>
+          </Route>
+        </Switch>
+      </Router>
+    </div>
+  );
 }
 
 export default App

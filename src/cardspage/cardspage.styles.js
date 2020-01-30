@@ -24,8 +24,4 @@ export const useStyles = makeStyles(theme => ({
            }
          },
 
-         grid: {
-           height: "100%",
-         }, 
-
 }));
