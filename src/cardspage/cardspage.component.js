@@ -39,9 +39,9 @@ const CardsPage = () => {
       <Grid className={classes.grid} container spacing={3} justify="center">
         {data ? (
           data.cards.map((card) => (
-            <Grid key={card} item>
-              <Link key={card} to={`/cards/${card.name}/${card.id}/`}>
-                <img className={classes.card} key={card.id} src={card.imageUrl} alt={card.name} />
+            <Grid key={card.id} item>
+              <Link to={`/cards/${card.name}/${card.id}/`}>
+                <img className={classes.card} src={card.imageUrl} alt={card.name} />
               </Link>
             </Grid>
           ))
