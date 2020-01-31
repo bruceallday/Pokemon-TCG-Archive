@@ -43,32 +43,48 @@ const CardDetails = () => {
             alt="hi resolution"
           />
           <div className={classes.cardDetails}>
-            <h2>{`#${data.cards[0].nationalPokedexNumber} ${data.cards[0].name}`}</h2>
+            <h2>
+              {cardIsPokemon
+                ? `#${data.cards[0].nationalPokedexNumber} ${data.cards[0].name}`
+                : `${data.cards[0].name}`}
+            </h2>
 
-            <p>{`Evolves from ${data.cards[0].evolvesFrom}`}</p>
+            <p>{cardIsPokemon ? `Evolves from ${data.cards[0].evolvesFrom}` : <p />}</p>
 
-            <p>{`HP: ${data.cards[0].hp}`}</p>
+            <p>{cardIsPokemon ? `HP: ${data.cards[0].hp}` : <p /> }</p>
 
-            {cardIsPokemon ? data.cards[0].types.map((item, i) => (
-              <p key={i}>{`Type ${i + 1}: ${item}`}</p>
-            )) : <p></p> }
+            {cardIsPokemon ? (
+              data.cards[0].types.map((item, i) => (
+                <p key={0}>{`Type ${i + 1}: ${item}`}</p>
+              ))
+            ) : (
+              <p />
+            )}
 
             <p>{`Subtype: ${data.cards[0].subtype}`}</p>
             <p>{`Super type: ${data.cards[0].supertype}`}</p>
 
-            {cardIsPokemon ? data.cards[0].weaknesses.map((item, i) => (
-              <p key={i}>{`Weakness ${i + 1}: ${item.type} -> Value: ${item.value}`}</p>
-            )) : <p></p>}
+            {cardIsPokemon ? (
+              data.cards[0].weaknesses.map((item, i) => (
+                <p key={1}>{`Weakness ${i + 1}: ${item.type} -> Value: ${item.value}`}</p>
+              ))
+            ) : (
+              <p />
+            )}
 
-            {cardIsPokemon ? data.cards[0].attacks.map((item, i) => (
-              <p key={i}>{`Attack ${i + 1}: ${item.name} -> Damage: ${item.damage} -> ${item.text}`}</p>
-            )) : <p></p>}
+            {cardIsPokemon ? (
+              data.cards[0].attacks.map((item, i) => (
+                <p key={2}>{`Attack ${i + 1}: ${item.name} -> Damage: ${item.damage} -> ${item.text}`}</p>
+              ))
+            ) : (
+              <p />
+            )}
 
             <p>{`Series: ${data.cards[0].series}`}</p>
             <p>{`Card ID: ${data.cards[0].id}`}</p>
             <p>{`Set: ${data.cards[0].set}`}</p>
             <p>{`Set Code: ${data.cards[0].setCode}`}</p>
-            <p>{`Converted retreat cost: ${data.cards[0].convertedRetreatCost}`}</p>
+            <p>{cardIsPokemon ? `Converted retreat cost: ${data.cards[0].convertedRetreatCost}` : <p />}</p>
             <p>{`Number: ${data.cards[0].number}`}</p>
             <p>{`Rarity: ${data.cards[0].rarity}`}</p>
             <p>{`Artwork by ${data.cards[0].artist}`}</p>
@@ -80,7 +96,7 @@ const CardDetails = () => {
 
       {data ? console.log(data.cards) : <p />}
     </div>
-  )
+  );
 }
 
 export default CardDetails
