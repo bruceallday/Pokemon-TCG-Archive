@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+
 import useStyles from './card-details.styles'
 
 const CardDetails = () => {
-  const { name, cardID } = useParams()
-
-  console.log(name, cardID)
+  const { cardID } = useParams()
 
   const [data, setData] = useState(null)
+  const [nonPokemon, setNonPokemon] = useState(false)
   const classes = useStyles()
 
   const getData = async (card) => {
@@ -22,6 +22,11 @@ const CardDetails = () => {
     } else {
       setData(formattedData)
       console.log(data)
+    }
+
+    if (data.cards[0].supertype !== 'Pokemon') {
+      setNonPokemon(true)
+      console.log(nonPokemon)
     }
   }
 
@@ -45,29 +50,26 @@ const CardDetails = () => {
 
             <p>{`HP: ${data.cards[0].hp}`}</p>
 
-            {data.cards[0].types.map((item, i) => (
+            { data.cards[0].types.map((item, i) => (
               <p key={i}>{`Type ${i + 1}: ${item}`}</p>
             ))}
 
             <p>{`Subtype: ${data.cards[0].subtype}`}</p>
             <p>{`Super type: ${data.cards[0].supertype}`}</p>
 
-            {data.cards[0].weaknesses.map((item, i) => (
+            { data.cards[0].weaknesses.map((item, i) => (
               <p key={i}>{`Weakness ${i + 1}: ${item.type} -> Value: ${item.value}`}</p>
             ))}
 
-            {data.cards[0].attacks.map((item, i) => (
+            { data.cards[0].attacks.map((item, i) => (
               <p key={i}>{`Attack ${i + 1}: ${item.name} -> Damage: ${item.damage} -> ${item.text}`}</p>
             ))}
 
             <p>{`Series: ${data.cards[0].series}`}</p>
             <p>{`Card ID: ${data.cards[0].id}`}</p>
-
             <p>{`Set: ${data.cards[0].set}`}</p>
             <p>{`Set Code: ${data.cards[0].setCode}`}</p>
-
             <p>{`Converted retreat cost: ${data.cards[0].convertedRetreatCost}`}</p>
-
             <p>{`Number: ${data.cards[0].number}`}</p>
             <p>{`Rarity: ${data.cards[0].rarity}`}</p>
             <p>{`Artwork by ${data.cards[0].artist}`}</p>
