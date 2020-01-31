@@ -7,7 +7,7 @@ const CardDetails = () => {
   const { cardID } = useParams()
 
   const [data, setData] = useState(null)
-  const [nonPokemon, setNonPokemon] = useState(false)
+  const [cardIsPokemon, setIsPokemon] = useState(false)
   const classes = useStyles()
 
   const getData = async (card) => {
@@ -22,10 +22,10 @@ const CardDetails = () => {
     } else {
       setData(formattedData)
       console.log(data)
-    }
-    if (data.cards[0].supertype === 'Pokemon') {
-      setNonPokemon(true)
-      console.log(nonPokemon)
+      if (formattedData.cards[0].supertype === 'Pokémon') {
+        setIsPokemon(true)
+        console.log(cardIsPokemon)
+      }
     }
   }
 
@@ -49,20 +49,20 @@ const CardDetails = () => {
 
             <p>{`HP: ${data.cards[0].hp}`}</p>
 
-            { data.cards[0].types.map((item, i) => (
+            {cardIsPokemon ? data.cards[0].types.map((item, i) => (
               <p key={i}>{`Type ${i + 1}: ${item}`}</p>
-            ))}
+            )) : <p></p> }
 
             <p>{`Subtype: ${data.cards[0].subtype}`}</p>
             <p>{`Super type: ${data.cards[0].supertype}`}</p>
 
-            { data.cards[0].weaknesses.map((item, i) => (
+            {cardIsPokemon ? data.cards[0].weaknesses.map((item, i) => (
               <p key={i}>{`Weakness ${i + 1}: ${item.type} -> Value: ${item.value}`}</p>
-            ))}
+            )) : <p></p>}
 
-            { data.cards[0].attacks.map((item, i) => (
+            {cardIsPokemon ? data.cards[0].attacks.map((item, i) => (
               <p key={i}>{`Attack ${i + 1}: ${item.name} -> Damage: ${item.damage} -> ${item.text}`}</p>
-            ))}
+            )) : <p></p>}
 
             <p>{`Series: ${data.cards[0].series}`}</p>
             <p>{`Card ID: ${data.cards[0].id}`}</p>
