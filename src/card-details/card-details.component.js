@@ -23,8 +23,7 @@ const CardDetails = () => {
       setData(formattedData)
       console.log(data)
     }
-
-    if (data.cards[0].supertype !== 'Pokemon') {
+    if (data.cards[0].supertype === 'Pokemon') {
       setNonPokemon(true)
       console.log(nonPokemon)
     }
@@ -81,7 +80,7 @@ const CardDetails = () => {
 
       {data ? console.log(data.cards) : <p />}
     </div>
-  );
+  )
 }
 
 export default CardDetails
