@@ -10,7 +10,7 @@ const CardsPage = () => {
   const [data, setData] = useState(null)
   const classes = useStyles()
 
-  const getData = async (pokemon) => {
+  const onSubmit = async (pokemon) => {
     setData(null)
 
     const result = await fetch(
@@ -29,7 +29,8 @@ const CardsPage = () => {
 
   return (
     <div className={classes.root}>
-      <SearchForm getData={getData} />
+
+      <SearchForm onSubmit={onSubmit} />
 
       <Grid className={classes.grid} container spacing={3} justify="center">
         {data ? (

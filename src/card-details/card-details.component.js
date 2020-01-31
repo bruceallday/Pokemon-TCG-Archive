@@ -7,12 +7,9 @@ const CardDetails = () => {
   const { cardID } = useParams()
 
   const [data, setData] = useState(null)
-  const [cardIsPokemon, setIsPokemon] = useState(false)
   const classes = useStyles()
 
   const getData = async (card) => {
-    setData(null)
-
     const result = await fetch(`https://api.pokemontcg.io/v1/cards?id=${card}`)
 
     const formattedData = await result.json()
@@ -22,10 +19,6 @@ const CardDetails = () => {
     } else {
       setData(formattedData)
       console.log(data)
-      if (formattedData.cards[0].supertype === 'Pokémon') {
-        setIsPokemon(true)
-        console.log(cardIsPokemon)
-      }
     }
   }
 
@@ -33,68 +26,68 @@ const CardDetails = () => {
     getData(cardID)
   }, [])
 
+  const card = data && data.cards[0]
+  const cardIsPokemon = card && card.supertype === 'Pokémon'
+
   return (
     <div className={classes.detailsPage}>
-      {data ? (
+      {card && (
         <div className={classes.detailsContainer}>
           <img
             className={classes.cardImage}
-            src={data.cards[0].imageUrlHiRes}
+            src={card.imageUrlHiRes}
             alt="hi resolution"
           />
           <div className={classes.cardDetails}>
             <h2>
-              {cardIsPokemon
-                ? `#${data.cards[0].nationalPokedexNumber} ${data.cards[0].name}`
-                : `${data.cards[0].name}`}
+              {cardIsPokemon && `#${card.nationalPokedexNumber} `}
+              {card.name}
             </h2>
 
-            <p>{cardIsPokemon ? `Evolves from ${data.cards[0].evolvesFrom}` : <p />}</p>
+            <p>{cardIsPokemon && `Evolves from ${card.evolvesFrom}`}</p>
 
-            <p>{cardIsPokemon ? `HP: ${data.cards[0].hp}` : <p /> }</p>
+            <p>{cardIsPokemon && `HP: ${card.hp}`}</p>
 
-            {cardIsPokemon ? (
-              data.cards[0].types.map((item, i) => (
-                <p key={0}>{`Type ${i + 1}: ${item}`}</p>
+            {cardIsPokemon && (
+              card.types.map((item, i) => (
+                <p key={item}>{`Type ${i + 1}: ${item}`}</p>
               ))
-            ) : (
-              <p />
             )}
 
-            <p>{`Subtype: ${data.cards[0].subtype}`}</p>
-            <p>{`Super type: ${data.cards[0].supertype}`}</p>
+            <p>{`Subtype: ${card.subtype}`}</p>
+            <p>{`Supertype: ${card.supertype}`}</p>
 
-            {cardIsPokemon ? (
-              data.cards[0].weaknesses.map((item, i) => (
-                <p key={1}>{`Weakness ${i + 1}: ${item.type} -> Value: ${item.value}`}</p>
+            {cardIsPokemon && (
+              card.weaknesses.map((item, i) => (
+                <p key={item.type}>{`Weakness ${i + 1}: ${item.type} -> Value: ${item.value}`}</p>
               ))
-            ) : (
-              <p />
             )}
 
-            {cardIsPokemon ? (
-              data.cards[0].attacks.map((item, i) => (
-                <p key={2}>{`Attack ${i + 1}: ${item.name} -> Damage: ${item.damage} -> ${item.text}`}</p>
+            {cardIsPokemon && (
+              card.attacks.map((item, i) => (
+                <p key={item.name}>{`Attack ${i + 1}: ${item.name} -> Damage: ${item.damage} -> ${item.text}`}</p>
               ))
-            ) : (
-              <p />
             )}
 
-            <p>{`Series: ${data.cards[0].series}`}</p>
-            <p>{`Card ID: ${data.cards[0].id}`}</p>
-            <p>{`Set: ${data.cards[0].set}`}</p>
-            <p>{`Set Code: ${data.cards[0].setCode}`}</p>
-            <p>{cardIsPokemon ? `Converted retreat cost: ${data.cards[0].convertedRetreatCost}` : <p />}</p>
-            <p>{`Number: ${data.cards[0].number}`}</p>
-            <p>{`Rarity: ${data.cards[0].rarity}`}</p>
-            <p>{`Artwork by ${data.cards[0].artist}`}</p>
+            <p>{`Series: ${card.series}`}</p>
+            <p>{`Card ID: ${card.id}`}</p>
+            <p>{`Set: ${card.set}`}</p>
+            <p>{`Set Code: ${card.setCode}`}</p>
+
+            <p>
+              {cardIsPokemon && (
+                `Converted retreat cost: ${card.convertedRetreatCost}`
+              )}
+            </p>
+
+            <p>{`Number: ${card.number}`}</p>
+            <p>{`Rarity: ${card.rarity}`}</p>
+            <p>{`Artwork by ${card.artist}`}</p>
           </div>
         </div>
-      ) : (
-        <p />
       )}
 
-      {data ? console.log(data.cards) : <p />}
+      {data && console.log(data.cards)}
     </div>
   )
 }

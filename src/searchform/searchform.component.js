@@ -7,7 +7,7 @@ import useStyles from './searchform.styles'
 
 const SearchForm = (props) => {
   const [pokemon, handlePokemon] = useState('')
-  const { getData } = props
+  const { onSubmit } = props
 
   const classes = useStyles()
 
@@ -27,7 +27,7 @@ const SearchForm = (props) => {
           color="primary"
         />
         <Button
-          onClick={() => getData(pokemon)}
+          onClick={() => onSubmit(pokemon)}
           className={classes.searchButton}
           variant="contained"
         >
