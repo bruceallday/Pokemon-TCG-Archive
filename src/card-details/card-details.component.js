@@ -96,7 +96,7 @@ const CardDetails = () => {
 
       {data ? console.log(data.cards) : <p />}
     </div>
-  );
+  )
 }
 
 export default CardDetails

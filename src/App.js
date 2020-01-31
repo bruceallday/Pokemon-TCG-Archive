@@ -13,43 +13,40 @@ import HomePage from './homepage/home.component'
 import CardsPage from './cardspage/cardspage.component'
 import CardDetails from './card-details/card-details.component'
 
-import { useStyles } from './app.styles'
 
+const App = () => (
+  <div>
+    <CssBaseline />
 
-const App = () => {
-  const classes = useStyles()
-  return (
     <div>
-      <CssBaseline />
-      <div className={classes.root}>
-        <Router>
-          <Header />
+      <Router>
+        <Header />
 
-          <Switch>
-            <Route path="/" exact>
-              <HomePage />
-            </Route>
+        <Switch>
+          <Route path="/" exact>
+            <HomePage />
+          </Route>
 
-            <Route path="/cards/:name/:cardID" exact>
-              <CardDetails />
-            </Route>
+          <Route path="/cards/:name/:cardID" exact>
+            <CardDetails />
+          </Route>
 
-            <Route path="/cards">
-              <CardsPage />
-            </Route>
+          <Route path="/cards">
+            <CardsPage />
+          </Route>
 
-            <Route path="/home">
-              <Redirect to="/" />
-            </Route>
+          <Route path="/home">
+            <Redirect to="/" />
+          </Route>
 
-            <Route path="/">
-              <div>PAGE NOT FOUND</div>
-            </Route>
-          </Switch>
-        </Router>
-      </div>
+          <Route path="/">
+            <div>PAGE NOT FOUND</div>
+          </Route>
+        </Switch>
+      </Router>
     </div>
-  )
-}
+
+  </div>
+)
 
 export default App
